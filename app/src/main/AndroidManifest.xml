@@ -50,7 +50,7 @@
         <activity android:name=".activity.AToolActivity"/>
         <activity android:name=".activity.QueryAddressActivity"/>
         <activity android:name=".activity.BlackListActivity"/>
-        <activity android:name=".activity.AppMangerActivity"/>
+        <activity android:name=".activity.AppManagerActivity"/>
     <activity android:name=".activity.ToastLocationActivity"
         android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <service android:name=".service.LocationService">

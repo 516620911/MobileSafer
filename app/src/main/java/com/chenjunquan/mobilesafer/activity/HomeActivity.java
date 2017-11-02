@@ -63,7 +63,7 @@ public class HomeActivity extends Activity {
                         break;
                     case 2:
                         //跳转到黑名单列表界面
-                        startActivity(new Intent(getApplicationContext(),AppMangerActivity.class));
+                        startActivity(new Intent(getApplicationContext(),AppManagerActivity.class));
                         break;
                     case 7:
                         //跳转到高级工具列表界面

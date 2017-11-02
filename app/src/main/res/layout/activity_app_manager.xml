@@ -1,30 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
-<TextView
-    style="@style/TitleStyle"
-    android:text="软件管理"/>
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        style="@style/TitleStyle"
+        android:text="软件管理"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_memory"
-            android:text="磁盘可用"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_sd_memory"
-            android:text="SD卡可用"
-            android:layout_alignParentRight="true"/>
-    </RelativeLayout>
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:padding="5dp">
 
-    </ListView>
+        <TextView
+            android:id="@+id/tv_memory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="磁盘可用"/>
+
+        <TextView
+            android:id="@+id/tv_sd_memory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="sd卡可用"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--帧布局是后面的控件覆盖前面的控件-->
+        <ListView
+            android:id="@+id/lv_app_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+        <TextView
+            android:id="@+id/tv_app_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ccc"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+
+    </FrameLayout>
+
 </LinearLayout>
