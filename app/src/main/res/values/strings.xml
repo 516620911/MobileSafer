@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MobileSafer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="sample_device_admin">设备管理器</string>
+    <string name="sample_device_admin_description" translatable="false">手机防盗功能相关设备管理器</string>
+
+
+</resources>

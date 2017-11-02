@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    android:background="#accc">
+    <!--imageView在相对布局中,所以其所在位置的规则要由相对布局提供-->
+    <!--透明度-->
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/iv_drag"
+    android:background="@drawable/drag"/>
+    <Button
+        android:id="@+id/bt_top"
+        android:layout_width="match_parent"
+        android:background="@drawable/call_locate_blue"
+        android:layout_height="wrap_content"
+        android:text="拖拽提示框到任意位置"
+        android:visibility="invisible"
+        android:gravity="center"/>
+    <Button
+        android:id="@+id/bt_bottom"
+        android:gravity="center"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:background="@drawable/call_locate_blue"
+        android:layout_height="wrap_content"
+        android:text="拖拽提示框到任意位置"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        style="@style/TitleStyle"
+        android:text="功能列表"/>
+    <!-- android:ellipsize="start" 添加省略点的默认位置 -->
+    <!--android:focusable="true"
+           android:focusableInTouchMode="true"
+           android:singleLine="true" 必须
+           android:marqueeRepeatLimit="marquee_forever"
+           滚动-->
+    <!--自定义控件达到滚动效果 需要重写原来的控件-->
+    <!--<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:maxLines="1"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dp"
+        android:text="一个强盗持刀破门而入，只见一对夫妇坐在沙发上，两人见强盗进来，都吓得直哆嗦。强盗对女人说：“我刀下不死无名之鬼，你叫什么名字？”女人说：“美丽。”强盗哼的一声说：“今天算你走运，我的妈妈也叫美丽。”接着，强盗对男人说：“你叫什么？”男人颤抖的说：“我本名叫志强，但外号叫美丽……”"
+        android:textColor="#000"/>-->
+    <com.chenjunquan.mobilesafer.view.FocusTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="一个强盗持刀破门而入，只见一对夫妇坐在沙发上，两人见强盗进来，都吓得直哆嗦。强盗对女人说：“我刀下不死无名之鬼，你叫什么名字？”女人说：“美丽。”强盗哼的一声说：“今天算你走运，我的妈妈也叫美丽。”接着，强盗对男人说：“你叫什么？”男人颤抖的说：“我本名叫志强，但外号叫美丽……”"
+        android:textColor="#000"/>
+    <!--android:verticalSpacing="10dp" 指定内部条目竖直方向上的间距为10dp-->
+    <GridView
+        android:id="@+id/gv_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="3"
+        android:verticalSpacing="10dp"
+        ></GridView>
+</LinearLayout>

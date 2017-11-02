@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/launcher_bg"
+    tools:context="com.chenjunquan.mobilesafer.activity.SplashActivity" 
+    android:id="@+id/rl_root">
+        <!--阴影平移 -->
+        <!-- android:shadowRadius="5" 阴影所在范围 -->
+    <TextView
+        android:id="@+id/tv_version_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="版本名称" 
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowColor="#f00"    
+        android:shadowRadius="5"
+        android:textSize="16sp"      
+        android:layout_centerInParent="true"/>
+	<ProgressBar 
+	    android:layout_below="@+id/tv_version_name"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"/>
+</RelativeLayout>
