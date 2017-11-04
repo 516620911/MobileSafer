@@ -16,10 +16,12 @@ import java.io.File;
 
 public class AToolActivity extends Activity {
 
-    private TextView tv_query_phone_address,tv_sms_backup;
+    private TextView tv_query_phone_address,tv_sms_backup,tv_common_phone;
     private ProgressBar pb_bar;
+    private TextView tv_applock;
 
-	@Override
+
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_atool);
@@ -28,7 +30,29 @@ public class AToolActivity extends Activity {
 		initPhoneAddress();
 		//备份短信
 		initSmsBackup();
+		//常用电话
+        initCommonPhone();
+        //程序锁
+        initAppLock();
 	}
+
+    private void initAppLock() {
+        tv_applock = (TextView) findViewById(R.id.tv_applock);
+        tv_applock.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AppLockActivity.class));
+            }
+        });
+    }
+
+    private void initCommonPhone() {
+        tv_common_phone = (TextView) findViewById(R.id.tv_common_phone);
+        tv_common_phone.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), CommonPhoneQueryActivity.class));
+            }
+        });
+    }
 
     private void initSmsBackup() {
         tv_sms_backup = (TextView) findViewById(R.id.tv_sms_backup);

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.util.Log;
 
 import com.chenjunquan.mobilesafer.bean.AppInfo;
 
@@ -38,7 +37,7 @@ public class AppInfoProvider {
             //判断是否为系统应用
             if((applicationInfo.flags&ApplicationInfo.FLAG_SYSTEM)==ApplicationInfo.FLAG_SYSTEM){
                 //系统应用
-                Log.i("applicationInfo",applicationInfo.flags+"-"+ApplicationInfo.FLAG_SYSTEM);
+               // Log.i("applicationInfo",applicationInfo.flags+"-"+ApplicationInfo.FLAG_SYSTEM);
                 appInfo.setSystem(true);
             }else{
                 appInfo.setSystem(false);

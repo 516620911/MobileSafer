@@ -98,6 +98,15 @@
         mobilesafe:deson="黑名单拦截已开启"
         mobilesafe:destitle="黑名单拦截设置"
         />
+    <com.chenjunquan.mobilesafer.view.SettingItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.chenjunquan.mobilesafer"
+        android:id="@+id/siv_applock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesafe:desoff="应用锁已关闭"
+        mobilesafe:deson="应用锁已开启"
+        mobilesafe:destitle="应用锁设置"
+        />
 
     <Button
         android:layout_width="match_parent"

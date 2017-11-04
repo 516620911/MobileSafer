@@ -122,6 +122,8 @@ public class SplashActivity extends Activity {
     private void initDB() {
         //归属地数据库拷贝
         initAddressDB("address.db");
+        //常用号码数据库拷贝
+        initAddressDB("commonnum.db");
     }
 
     /**

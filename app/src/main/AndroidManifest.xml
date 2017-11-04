@@ -9,6 +9,7 @@
         android:targetSdkVersion="24"/>
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
@@ -24,6 +25,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> <!-- //获取粗略坐标的权限(网络定位时使用) -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/> <!-- 将view挂载在Window权限 -->
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions"/>
@@ -56,6 +58,13 @@
         <activity android:name=".activity.QueryAddressActivity"/>
         <activity android:name=".activity.BlackListActivity"/>
         <activity android:name=".activity.AppManagerActivity"/>
+        <activity android:name=".activity.CommonPhoneQueryActivity"/>
+        <activity android:name=".activity.AppLockActivity"/>
+        <activity android:name=".activity.ValidationActivity"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true"/>
+        <!--应用锁问题4从最近打开的应用中排除-->
+        <!--应用锁问题1单例启动以解决手机卫士的任务栈排在要启动应用之前-->
         <activity
             android:name=".activity.ToastLocationActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
@@ -64,7 +73,7 @@
         </service>
         <service android:name=".service.AddressService"/>
         <service android:name=".service.BlackNumberService"/>
-
+<service android:name=".service.WatchDogService"/>
         <receiver android:name=".receiver.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
@@ -75,6 +84,7 @@
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
             </intent-filter>
         </receiver>
+
         <receiver
             android:name=".receiver.MyDeviceAdminReceiver"
             android:description="@string/sample_device_admin_description"

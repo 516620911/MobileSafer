@@ -12,6 +12,7 @@ import com.chenjunquan.mobilesafer.R;
 import com.chenjunquan.mobilesafer.service.AddressService;
 import com.chenjunquan.mobilesafer.service.BlackNumberService;
 import com.chenjunquan.mobilesafer.service.ServiceUtil;
+import com.chenjunquan.mobilesafer.service.WatchDogService;
 import com.chenjunquan.mobilesafer.utils.ConstantValue;
 import com.chenjunquan.mobilesafer.utils.SpUtil;
 import com.chenjunquan.mobilesafer.view.SettingClickView;
@@ -36,6 +37,25 @@ public class SettingActivity extends Activity {
         initToastStyle();
         initToastLocation();
         initBlacknumber();
+        initApplock();
+    }
+
+    private void initApplock() {
+        final SettingItemView siv_applock = (SettingItemView) findViewById(R.id.siv_applock);
+        boolean isRunning = ServiceUtil.isRunning(this, "com.chenjunquan.mobilesafer.service.WatchDogService");
+        siv_applock.setCheck(isRunning);
+        siv_applock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isCheck = siv_applock.isCheck();
+                siv_applock.setCheck(!isCheck);
+                if(!isCheck){
+                    startService(new Intent(getApplicationContext(), WatchDogService.class));
+                }else{
+                    stopService(new Intent(getApplicationContext(), WatchDogService.class));
+                }
+            }
+        });
     }
 
     /**

@@ -55,19 +55,28 @@ public class HomeActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 switch (position) {
                     case 0:
+                        //手机防盗
                         showDialog();
                         break;
                     case 1:
-                        //跳转到黑名单列表界面
+                        //跳转通信卫士界面
                         startActivity(new Intent(getApplicationContext(),BlackListActivity.class));
                         break;
                     case 2:
-                        //跳转到黑名单列表界面
+                        //跳转到软件管理界面
                         startActivity(new Intent(getApplicationContext(),AppManagerActivity.class));
                         break;
                     case 3:
-                        //跳转到黑名单列表界面
+                        //跳转到进程管理界面
                         startActivity(new Intent(getApplicationContext(),ProcessManagerActivity.class));
+                        break;
+                    case 4:
+                        //跳转到流量统计界面
+                        //startActivity(new Intent(getApplicationContext(),KillVirtue.class));
+                        break;
+                    case 5:
+                        //跳转到杀毒界面
+                        //startActivity(new Intent(getApplicationContext(),KillVirtue.class));
                         break;
                     case 7:
                         //跳转到高级工具列表界面
