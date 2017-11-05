@@ -18,6 +18,7 @@ import com.chenjunquan.mobilesafer.utils.ToastUtil;
 
 /**
  * 本界面为程序锁验证界面
+ * 发送一个自定义广播
  * Created by 51662on 2017.11.04.
  */
 

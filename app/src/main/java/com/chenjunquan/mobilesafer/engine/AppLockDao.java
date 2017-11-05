@@ -11,6 +11,9 @@ import com.chenjunquan.mobilesafer.db.AppLockOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 应用锁数据库查询
+ */
 public class AppLockDao {
     private  Context mContext;
     private AppLockOpenHelper appLockOpenHelper;

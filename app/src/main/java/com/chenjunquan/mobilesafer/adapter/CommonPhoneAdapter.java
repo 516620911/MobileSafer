@@ -14,6 +14,8 @@ import com.chenjunquan.mobilesafer.engine.CommonPhoneDao;
 import java.util.List;
 
 /**
+ * 本界面为常用电话数据适配器
+ * BaseExpandableListAdapter的实现
  * Created by 516620911 on 2017.11.04.
  */
 

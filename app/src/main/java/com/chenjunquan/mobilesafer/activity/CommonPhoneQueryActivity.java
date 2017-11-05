@@ -15,7 +15,10 @@ import com.chenjunquan.mobilesafer.engine.CommonPhoneDao;
 import java.util.List;
 
 
-
+/**
+ * 常用电话界面
+ * 跳转到拨号界面
+ */
 public class CommonPhoneQueryActivity extends Activity {
 	private ExpandableListView elv_common_number;
 	private List<CommonPhoneDao.Group> mGroup;

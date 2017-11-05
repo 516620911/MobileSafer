@@ -26,6 +26,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 /**
+ * 监视应用开启的服务
  * 通过任务栈监听当前开启的应用
  * 所有加了程序锁的应用只有一个应用通过验证后能不被拦截
  * Created by 516620911 on 2017.11.04.
@@ -86,6 +87,7 @@ public class WatchDogService extends Service {
             //十秒前到现在的进程运行情况
             List<UsageStats> stats = mUsageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, time - 1000 * 10, time);
             if (stats != null) {
+
                 SortedMap<Long, UsageStats> mySortedMap = new TreeMap<Long, UsageStats>();
                 for (UsageStats usageStats : stats) {
                     //按最近使用时间排序
