@@ -76,7 +76,11 @@ public class HomeActivity extends Activity {
                         break;
                     case 5:
                         //跳转到杀毒界面
-                        //startActivity(new Intent(getApplicationContext(),KillVirtue.class));
+                        startActivity(new Intent(getApplicationContext(),KillVirusActivity.class));
+                        break;
+                    case 6:
+                        //跳转到清理缓存界面
+                        startActivity(new Intent(getApplicationContext(),CacheClearActivity.class));
                         break;
                     case 7:
                         //跳转到高级工具列表界面

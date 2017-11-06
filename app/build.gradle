@@ -12,7 +12,7 @@ android {
             sourceCompatibility JavaVersion.VERSION_1_7
             targetCompatibility JavaVersion.VERSION_1_7
         }
-
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
     }
 
     buildTypes {
@@ -32,4 +32,5 @@ dependencies {
     compile 'org.litepal.android:core:1.4.1'
     compile 'com.rvalerio:fgchecker:1.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.jakewharton:butterknife:7.0.1'
 }

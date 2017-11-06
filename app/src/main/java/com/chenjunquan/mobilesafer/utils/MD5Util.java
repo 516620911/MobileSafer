@@ -27,7 +27,7 @@ public class MD5Util {
                 }
                 sb.append(hexString);
             }
-            System.out.println(sb.toString());
+            //System.out.println(sb.toString());
             return sb.toString();
 
         } catch (NoSuchAlgorithmException e) {

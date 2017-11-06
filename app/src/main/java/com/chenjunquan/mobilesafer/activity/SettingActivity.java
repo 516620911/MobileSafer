@@ -174,6 +174,7 @@ public class SettingActivity extends Activity {
                 }
         );
     }
+    //卸载应用
     public void uninstall(View view){
         Intent intent = new Intent("android.intent.action.DELETE");
         intent.addCategory("android.intent.category.DEFAULT");

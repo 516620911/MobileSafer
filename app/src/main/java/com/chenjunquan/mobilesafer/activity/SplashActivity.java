@@ -124,6 +124,8 @@ public class SplashActivity extends Activity {
         initAddressDB("address.db");
         //常用号码数据库拷贝
         initAddressDB("commonnum.db");
+        //病毒数据库
+        initAddressDB("antivirus.db");
     }
 
     /**
@@ -147,7 +149,7 @@ public class SplashActivity extends Activity {
             //将读取的内容写到指定文件夹的文件中
             fos = new FileOutputStream(dbFile);
             byte[] bytes = new byte[1024];
-            int len = 0;
+            int len;
             while ((len = is.read(bytes)) != -1) {
                 fos.write(bytes, 0, len);
             }

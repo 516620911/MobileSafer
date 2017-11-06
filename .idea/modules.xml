@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/MobileSafer.iml" filepath="$PROJECT_DIR$/.idea/MobileSafer.iml" />
-      <module fileurl="file://D:\Workspaces\AndroidStudio\MobileSafer\MobileSafer.iml" filepath="D:\Workspaces\AndroidStudio\MobileSafer\MobileSafer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MobileSafer.iml" filepath="$PROJECT_DIR$/MobileSafer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
