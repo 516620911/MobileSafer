@@ -1,6 +1,5 @@
 package com.chenjunquan.mobilesafer.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,7 +21,7 @@ import com.chenjunquan.mobilesafer.view.SettingItemView;
  * Created by 516620911 on 2017.10.20.
  */
 
-public class SettingActivity extends Activity {
+public class SettingActivity extends BaseActivity {
 
     private String[] mToastStyle;
     private int mToast_style;
@@ -31,7 +30,7 @@ public class SettingActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+        initContentLayout(R.layout.activity_setting);
         initUpdate();
         initAddress();
         initToastStyle();

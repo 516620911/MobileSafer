@@ -1,9 +1,7 @@
 package com.chenjunquan.mobilesafer.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.database.Cursor;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.IdRes;
@@ -28,11 +26,11 @@ import org.litepal.crud.DataSupport;
 import java.util.List;
 
 /**
- * ListView加载更多
+ * RecyclerView加载更多
  * Created by Administrator on 2017/10/26.
  */
 
-public class BlackListActivity extends Activity {
+public class BlackListActivity extends BaseActivity {
     private int mode;
     private TextView et_blacknum;
     private static List<BlackListInfo> mBlackListInfos;
@@ -42,10 +40,9 @@ public class BlackListActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_blacklist);
+        initContentLayout(R.layout.activity_blacklist);
         initData();
         initUI();
-
     }
 
     private void initData() {
@@ -57,40 +54,37 @@ public class BlackListActivity extends Activity {
         }
 
         Cursor cursor = DataSupport.findBySQL("select count(*) from BlackListInfo");
-        if(cursor.moveToNext()){
-            total=cursor.getInt(0);
-            Log.i("total",total+"");
+        if (cursor.moveToNext()) {
+            total = cursor.getInt(0);
+            Log.i("total", total + "");
         }
         //mBlackListInfos = DataSupport.findAll(BlackListInfo.class);
         mBlackListInfos = DataSupport.limit(20).find(BlackListInfo.class);
     }
 
     private void initUI() {
-        Button bt_add = (Button) findViewById(R.id.bt_add);
+        /*Button bt_add = (Button) findViewById(R.id.bt_add);
         bt_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mode = 1;
                 showDialog();
             }
-        });
+        });*/
         RecyclerView rcv_blacklist = (RecyclerView) findViewById(R.id.rcv_blacklist);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         //linearLayoutManager.setOrientation(LinearLayout.VERTICAL);
         rcv_blacklist.setLayoutManager(linearLayoutManager);
         mBlackListAdapter = new BlackListAdapter(mBlackListInfos);
         rcv_blacklist.setAdapter(mBlackListAdapter);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            rcv_blacklist.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-                @Override
-                public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-
-                }
-
-            });
-        }
-
+        mFab.setImageResource(R.drawable.ic_launcher);
+        mFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mode = 1;
+                showDialog();
+            }
+        });
     }
 
     public class BlackListAdapter extends RecyclerView.Adapter<BlackListAdapter.ViewHolder> {
@@ -106,12 +100,13 @@ public class BlackListActivity extends Activity {
             this.BlackListInfos = mBlackListInfos;
         }
 
-         class ViewHolder extends RecyclerView.ViewHolder {
+        class ViewHolder extends RecyclerView.ViewHolder {
             TextView tv_blacklist_phone;
             TextView tv_blacklist_mode;
             ImageView iv_blacklist_delete;
             TextView tvFootView;
             ProgressBar pb_more;
+
             public ViewHolder(View itemView, int viewType) {
                 super(itemView);
                 //注意这里是view.
@@ -119,8 +114,8 @@ public class BlackListActivity extends Activity {
                     tv_blacklist_phone = (TextView) itemView.findViewById(R.id.tv_blacklist_phone);
                     tv_blacklist_mode = (TextView) itemView.findViewById(R.id.tv_blacklist_mode);
                     iv_blacklist_delete = (ImageView) itemView.findViewById(R.id.iv_blacklist_delete);
-                } else  if (viewType == FOOT_TYPE) {
-                    pb_more=(ProgressBar)itemView.findViewById(R.id.pb_more);
+                } else if (viewType == FOOT_TYPE) {
+                    pb_more = (ProgressBar) itemView.findViewById(R.id.pb_more);
                     tvFootView = (TextView) itemView.findViewById(R.id.tv_foot);
                 }
             }
@@ -143,7 +138,7 @@ public class BlackListActivity extends Activity {
                     String mode = normal_viewHolder.tv_blacklist_mode.getText().toString();
                     DataSupport.deleteAll(BlackListInfo.class, "phone=?", phone);
                     mBlackListInfos.remove(position);
-                    current_max_count=current_max_count-1;
+                    current_max_count = current_max_count - 1;
                     notifyDataSetChanged();
                     //此方法能解决条目删除的position问题?
                     notifyItemRemoved(position);
@@ -188,17 +183,17 @@ public class BlackListActivity extends Activity {
         public void onBindViewHolder(BlackListAdapter.ViewHolder holder, int position) {
 
             //建立起ViewHolder中试图与数据的关联
-            Log.d("onBindViewHolder", position+"-"+getItemViewType(position));
+            Log.d("onBindViewHolder", position + "-" + getItemViewType(position));
             //如果footview存在，并且当前位置ViewType是FOOT_TYPE
             if (isFootView && (getItemViewType(position) == FOOT_TYPE)) {
                 holder.tvFootView.setText("正在加载");
                 List<BlackListInfo> more = DataSupport.limit(20).offset(BlackListInfos.size()).find(BlackListInfo.class);
-                Log.i("more",more.toString());
+                Log.i("more", more.toString());
                 BlackListInfos.addAll(more);
-                isFootView=false;
+                isFootView = false;
                 //最大显示条目数=当前集合大小
-                current_max_count =BlackListInfos.size();
-                if(position==total) {
+                current_max_count = BlackListInfos.size();
+                if (position == total) {
                     holder.pb_more.setVisibility(View.GONE);
                     holder.tvFootView.setText("没有了");
                     return;
@@ -213,7 +208,7 @@ public class BlackListActivity extends Activity {
                 }, 1000);
 
 
-            }else{
+            } else {
                 BlackListInfo blackListInfo = BlackListInfos.get(position);
                 if (blackListInfo != null) {
                     holder.tv_blacklist_phone.setText(blackListInfo.getPhone());
@@ -224,11 +219,11 @@ public class BlackListActivity extends Activity {
 
         @Override
         public int getItemCount() {
-            Log.i("getItemCount",BlackListInfos.size()+"");
+            Log.i("getItemCount", BlackListInfos.size() + "");
             if (BlackListInfos.size() < current_max_count) {
-                return BlackListInfos.size()+1;
+                return BlackListInfos.size() + 1;
             }
-            return current_max_count +1;
+            return current_max_count + 1;
         }
 
         //创建一个方法来设置footView中的文字
@@ -309,7 +304,7 @@ public class BlackListActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i("onDestroy","onDestroy");
+        Log.i("onDestroy", "onDestroy");
         DataSupport.deleteAll(BlackListInfo.class);
     }
 }

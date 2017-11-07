@@ -1,7 +1,6 @@
 package com.chenjunquan.mobilesafer.activity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -38,7 +37,7 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2017/11/5.
  */
 
-public class KillVirusActivity extends Activity {
+public class KillVirusActivity extends BaseActivity {
     private static final int SCANING = 100;
     private static final int SCAN_FINISH = 200;
     @Bind(R.id.iv_virus_scanning)
@@ -96,7 +95,7 @@ public class KillVirusActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_killvirus);
+        initContentLayout(R.layout.activity_killvirus);
         ButterKnife.bind(this);
         initUI();
         initAnimation();

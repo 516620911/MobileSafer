@@ -1,6 +1,5 @@
 package com.chenjunquan.mobilesafer.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -24,7 +23,7 @@ import java.util.List;
  * Created by 516620911 on 2017.11.04.
  */
 
-public class AppLockActivity extends Activity implements View.OnClickListener {
+public class AppLockActivity extends BaseActivity implements View.OnClickListener {
     private LinearLayout llApplockUnlock;
     private TextView tvApplockLock;
     private ListView lvApplockLock;
@@ -40,8 +39,8 @@ public class AppLockActivity extends Activity implements View.OnClickListener {
         public void handleMessage(Message msg) {
             //接收到消息之后填充数据适配器
             //加锁的
-            AppLockAdapter lockAdapter = new AppLockAdapter(getApplicationContext(), true, mLockList, mUnLockList);
-            lvApplockLock.setAdapter(lockAdapter);
+            mLockAdapter = new AppLockAdapter(getApplicationContext(), true, mLockList, mUnLockList);
+            lvApplockLock.setAdapter(mLockAdapter);
             //未加锁的
             AppLockAdapter unLockAdapter = new AppLockAdapter(getApplicationContext(), false, mLockList, mUnLockList);
             lvApplockUnlock.setAdapter(unLockAdapter);
@@ -52,12 +51,13 @@ public class AppLockActivity extends Activity implements View.OnClickListener {
     private Button bt_applock_lock;
     public  static TextView tv_applock_unlock;
     public  static TextView tv_applock_lock;
+    private AppLockAdapter mLockAdapter;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_applock);
+        initContentLayout(R.layout.activity_applock);
         initData();
         initUI();
     }
@@ -112,6 +112,8 @@ public class AppLockActivity extends Activity implements View.OnClickListener {
                 bt_applock_lock.setBackgroundResource(R.drawable.tab_left_default);
                 break;
             case R.id.bt_applock_lock:
+                //刷新数据
+                mLockAdapter.notifyDataSetChanged();
                 //点击加锁按钮 未加锁布局隐藏 加锁显示
                 llApplockLock.setVisibility(View.VISIBLE);
                 llApplockUnlock.setVisibility(View.GONE);

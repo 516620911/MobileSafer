@@ -4,11 +4,11 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <TextView
+   <!-- <TextView
         style="@style/TitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="设置中心"/>
+        android:text="设置中心"/>-->
     <!--将以下相对布局抽取到类中-->
     <!--<RelativeLayout
         android:layout_width="match_parent"

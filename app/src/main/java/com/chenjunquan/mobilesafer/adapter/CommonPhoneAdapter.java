@@ -65,7 +65,7 @@ public class CommonPhoneAdapter extends BaseExpandableListAdapter{
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         TextView textView = new TextView(mContext);
         textView.setText("    "+getGroup(groupPosition).name);
-        textView.setTextColor(Color.GREEN);
+        textView.setTextColor(Color.BLUE);
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
         return textView;
     }

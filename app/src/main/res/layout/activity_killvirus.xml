@@ -3,9 +3,9 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical" >
-    <TextView
+    <!--<TextView
         style="@style/TitleStyle"
-        android:text="手机杀毒"/>
+        android:text="手机杀毒"/>-->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

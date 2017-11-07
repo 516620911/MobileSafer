@@ -1,6 +1,5 @@
 package com.chenjunquan.mobilesafer.activity;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +13,10 @@ import com.chenjunquan.mobilesafer.engine.SmsBackup;
 
 import java.io.File;
 
-public class AToolActivity extends Activity {
+/**
+ * 备份短信(进度条和进度条对话框回调函数)
+ */
+public class AToolActivity extends BaseActivity {
 
     private TextView tv_query_phone_address,tv_sms_backup,tv_common_phone;
     private ProgressBar pb_bar;
@@ -24,7 +26,7 @@ public class AToolActivity extends Activity {
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_atool);
+		initContentLayout(R.layout.activity_atool);
 		
 		//电话归属地查询方法
 		initPhoneAddress();
@@ -58,6 +60,7 @@ public class AToolActivity extends Activity {
         tv_sms_backup = (TextView) findViewById(R.id.tv_sms_backup);
         //底下的进度条
         pb_bar = (ProgressBar) findViewById(R.id.pb_bar);
+        pb_bar.setVisibility(View.VISIBLE);
         tv_sms_backup.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showSmsBackUpDialog();

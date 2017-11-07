@@ -6,10 +6,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
+        <!--<TextView
             android:text="缓存清理"
             style="@style/TitleStyle"
-            android:gravity="left"/>
+            android:gravity="left"/>-->
         <Button
             android:id="@+id/bt_clear"
             android:text="立即清理"

@@ -6,9 +6,9 @@
     android:orientation="vertical"
     >
 
-    <TextView
+   <!-- <TextView
         style="@style/TitleStyle"
-        android:text="进程管理"/>
+        android:text="进程管理"/>-->
 
     <RelativeLayout
         android:layout_width="match_parent"

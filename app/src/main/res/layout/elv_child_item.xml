@@ -9,11 +9,13 @@
     android:layout_height="wrap_content"
     android:id="@+id/tv_item_common_name"
     android:text="电话名称:"
-    android:textSize="15sp"/>
+    android:textSize="15sp"
+    android:textColor="#000"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tv_item_common_phone"
         android:text="电话:"
-        android:textSize="15sp"/>
+        android:textSize="15sp"
+        android:textColor="#000"/>
 </LinearLayout>

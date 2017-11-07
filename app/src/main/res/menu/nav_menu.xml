@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <!--<item
+            android:id="@+id/nav_home"
+            android:icon="@android:drawable/ic_menu_revert"
+            android:title="主页"/>-->
+        <item
+            android:id="@+id/nav_PhoneBak"
+            android:icon="@drawable/home_safe"
+            android:title="手机防盗"/>
+        <item
+            android:id="@+id/nav_BlackList"
+            android:icon="@drawable/home_callmsgsafe"
+            android:title="通信卫士"/>
+        <item
+            android:id="@+id/nav_AppManager"
+            android:icon="@drawable/home_apps"
+            android:title="应用管理"/>
+        <item
+            android:id="@+id/nav_ProcessManager"
+            android:icon="@drawable/home_taskmanager"
+            android:title="进程管理"/>
+        <item
+            android:id="@+id/nav_Traffic"
+            android:icon="@drawable/home_netmanager"
+            android:title="流量统计"/>
+        <item
+            android:id="@+id/nav_KillVirus"
+            android:icon="@drawable/home_trojan"
+            android:title="手机杀毒"/>
+        <item
+            android:id="@+id/nav_CacheClear"
+            android:icon="@drawable/home_sysoptimize"
+            android:title="清理缓存"/>
+        <item
+            android:id="@+id/nav_ATool"
+            android:icon="@drawable/home_tools"
+            android:title="高级工具"/>
+        <item
+            android:id="@+id/nav_Setting"
+            android:icon="@drawable/home_settings"
+            android:title="设置"/>
+    </group>
+</menu>

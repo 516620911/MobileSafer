@@ -1,6 +1,5 @@
 package com.chenjunquan.mobilesafer.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,7 +17,7 @@ import com.chenjunquan.mobilesafer.engine.ProcessInfoProvider;
 
 import java.util.ArrayList;
 
-public class ProcessManagerActivity extends Activity implements View.OnClickListener {
+public class ProcessManagerActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView tv_process_count;
     private TextView tv_memory_info;
@@ -45,7 +44,7 @@ public class ProcessManagerActivity extends Activity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_process_manager);
+        initContentLayout(R.layout.activity_process_manager);
         initUI();
         //初始化进程数量和内存大小
         initTitleData();

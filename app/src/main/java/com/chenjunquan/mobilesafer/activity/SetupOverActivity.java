@@ -1,6 +1,5 @@
 package com.chenjunquan.mobilesafer.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +13,7 @@ import com.chenjunquan.mobilesafer.utils.SpUtil;
  * Created by 516620911 on 2017.10.21.
  */
 
-public class SetupOverActivity extends Activity{
+public class SetupOverActivity extends BaseActivity{
 
     private TextView tv_safe_number;
     private TextView mTv_safe_number;
@@ -27,7 +26,7 @@ public class SetupOverActivity extends Activity{
 
         boolean setup_over = SpUtil.getBoolean(this, ConstantValue.SETUP_OVER, false);
         if(setup_over){
-            setContentView(R.layout.activity_setup_over);
+            initContentLayout(R.layout.activity_setup_over);
             initUI();
         }else{
             //导航设置未完成 跳转到导航设置界面

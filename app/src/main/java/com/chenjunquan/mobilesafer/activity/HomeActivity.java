@@ -1,6 +1,5 @@
 package com.chenjunquan.mobilesafer.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,7 +20,7 @@ import com.chenjunquan.mobilesafer.utils.MD5Util;
 import com.chenjunquan.mobilesafer.utils.SpUtil;
 import com.chenjunquan.mobilesafer.utils.ToastUtil;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends BaseActivity  {
     private GridView gv_home;
     private String[] mTitleStrs;
     private int[] mDrawableIds;
@@ -31,11 +30,21 @@ public class HomeActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        initContentLayout(R.layout.activity_home);
         initUI();
         initData();
-        
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openRightLayout();
+            }
+        });*/
     }
+
+
 
     private void initData() {
         mTitleStrs = new String[]{
@@ -72,7 +81,7 @@ public class HomeActivity extends Activity {
                         break;
                     case 4:
                         //跳转到流量统计界面
-                        //startActivity(new Intent(getApplicationContext(),KillVirtue.class));
+                        //startActivity(new Intent(getApplicationContext(),TrafficActivity.class));
                         break;
                     case 5:
                         //跳转到杀毒界面
@@ -80,6 +89,7 @@ public class HomeActivity extends Activity {
                         break;
                     case 6:
                         //跳转到清理缓存界面
+                        //startActivity(new Intent(getApplicationContext(),BaseCacheClearActivity.class));
                         startActivity(new Intent(getApplicationContext(),CacheClearActivity.class));
                         break;
                     case 7:

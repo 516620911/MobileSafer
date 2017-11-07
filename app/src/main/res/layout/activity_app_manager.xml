@@ -4,9 +4,9 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <TextView
+    <!--<TextView
         style="@style/TitleStyle"
-        android:text="软件管理"/>
+        android:text="软件管理"/>-->
 
     <RelativeLayout
         android:layout_width="match_parent"

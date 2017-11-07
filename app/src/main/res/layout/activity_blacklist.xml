@@ -8,18 +8,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <!--<TextView
             style="@style/TitleStyle"
             android:gravity="left"
-            android:text="黑名单管理"/>
+            android:text="黑名单管理"/>-->
 
-        <Button
+        <!--<Button
             android:id="@+id/bt_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="添加"/>
+            android:text="添加"/>-->
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView

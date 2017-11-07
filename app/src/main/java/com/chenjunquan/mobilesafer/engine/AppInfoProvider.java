@@ -29,9 +29,9 @@ public class AppInfoProvider {
             AppInfo appInfo=new AppInfo();
             //获取应用的包名
             appInfo.setPackageName(packageInfo.packageName);
-            //应用名称
+            //应用名称+唯一标识
             ApplicationInfo applicationInfo = packageInfo.applicationInfo;
-            appInfo.setName(applicationInfo.loadLabel(pm).toString());
+            appInfo.setName(applicationInfo.loadLabel(pm).toString()+applicationInfo.uid);
             //图标
             appInfo.setIcon(applicationInfo.loadIcon(pm));
             //判断是否为系统应用

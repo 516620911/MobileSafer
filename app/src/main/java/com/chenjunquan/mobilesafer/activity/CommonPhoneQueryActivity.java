@@ -1,6 +1,5 @@
 package com.chenjunquan.mobilesafer.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,7 +18,7 @@ import java.util.List;
  * 常用电话界面
  * 跳转到拨号界面
  */
-public class CommonPhoneQueryActivity extends Activity {
+public class CommonPhoneQueryActivity extends BaseActivity {
 	private ExpandableListView elv_common_number;
 	private List<CommonPhoneDao.Group> mGroup;
 	private CommonPhoneAdapter mAdapter;
@@ -27,7 +26,7 @@ public class CommonPhoneQueryActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_common_phone);
+		initContentLayout(R.layout.activity_common_phone);
 		initUI();
 		initData();
 	}

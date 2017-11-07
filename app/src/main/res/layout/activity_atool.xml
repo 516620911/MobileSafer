@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-	<TextView 
+	<!--<TextView
 	    style="@style/TitleStyle"
-	    android:text="高级工具"/>
+	    android:text="高级工具"/>-->
 	<TextView
 	    android:id="@+id/tv_query_phone_address"
 	    android:padding="5dp"
@@ -42,7 +42,7 @@
 	<TextView
 		android:id="@+id/tv_applock"
 		android:padding="5dp"
-		android:text="程序锁"
+		android:text="应用锁"
 		android:gravity="center"
 		android:textSize="18sp"
 		android:drawableLeft="@android:drawable/btn_star"

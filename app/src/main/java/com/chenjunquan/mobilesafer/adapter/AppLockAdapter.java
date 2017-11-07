@@ -41,7 +41,7 @@ public class AppLockAdapter extends BaseAdapter {
                 Animation.RELATIVE_TO_SELF, 1,
                 Animation.RELATIVE_TO_SELF, 0,
                 Animation.RELATIVE_TO_SELF, 0);
-        mTranslateAnimation.setDuration(500);
+        mTranslateAnimation.setDuration(300);
     }
     @Override
     public int getCount() {
@@ -102,7 +102,6 @@ public class AppLockAdapter extends BaseAdapter {
                     public void onAnimationStart(Animation animation) {
 
                     }
-
                     @Override
                     public void onAnimationEnd(Animation animation) {
                         if(isLock){

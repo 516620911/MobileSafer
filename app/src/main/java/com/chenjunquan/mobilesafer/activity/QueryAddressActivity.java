@@ -1,6 +1,5 @@
 package com.chenjunquan.mobilesafer.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -26,7 +25,7 @@ import com.chenjunquan.mobilesafer.engine.AddressDao;
  * Created by Administrator on 2017/10/23.
  */
 
-public class QueryAddressActivity extends Activity {
+public class QueryAddressActivity extends BaseActivity {
     private EditText et_phone;
     private Button bt_query;
     private TextView tv_query_result;
@@ -42,7 +41,7 @@ public class QueryAddressActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_query_address);
+        initContentLayout(R.layout.activity_query_address);
         initUI();
 
     }

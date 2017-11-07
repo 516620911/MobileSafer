@@ -1,6 +1,5 @@
 package com.chenjunquan.mobilesafer.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
@@ -34,7 +33,7 @@ import com.chenjunquan.mobilesafer.utils.ToastUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppManagerActivity extends Activity implements View.OnClickListener {
+public class AppManagerActivity extends BaseActivity implements View.OnClickListener {
     private List<AppInfo> mAppInfoList;
     private ListView lv_app_list;
     private MyAdapter mAdapter;
@@ -212,7 +211,7 @@ public class AppManagerActivity extends Activity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_app_manager);
+        initContentLayout(R.layout.activity_app_manager);
 
         initTitle();
         initList();

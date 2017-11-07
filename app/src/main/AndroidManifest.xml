@@ -25,8 +25,10 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> <!-- //获取粗略坐标的权限(网络定位时使用) -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/> <!-- 将view挂载在Window权限 -->
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <!-- <uses-permission android:name="android.permission.DELETE_CACHE_FILES"/> -->
+
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions"/>
@@ -36,7 +38,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".activity.SplashActivity"
             android:label="@string/app_name">
@@ -47,21 +49,39 @@
                 <!-- 启动图标 -->
             </intent-filter>
         </activity>
-        <activity android:name=".activity.HomeActivity"/>
-        <activity android:name=".activity.SettingActivity"/>
-        <activity android:name=".activity.TestActivity"/>
-        <activity android:name=".activity.SetupOverActivity"/>
+        <activity
+            android:name=".activity.HomeActivity"
+            android:label="功能列表"/>
+        <activity
+            android:name=".activity.SettingActivity"
+            android:label="设置中心"/>
+        <activity
+            android:name=".activity.SetupOverActivity"
+            android:label="手机防盗"/>
         <activity android:name=".activity.Setup1Activity"/>
         <activity android:name=".activity.Setup2Activity"/>
         <activity android:name=".activity.Setup3Activity"/>
         <activity android:name=".activity.Setup4Activity"/>
-        <activity android:name=".activity.AToolActivity"/>
-        <activity android:name=".activity.QueryAddressActivity"/>
-        <activity android:name=".activity.BlackListActivity"/>
-        <activity android:name=".activity.AppManagerActivity"/>
-        <activity android:name=".activity.CommonPhoneQueryActivity"/>
-        <activity android:name=".activity.AppLockActivity"/>
-        <activity android:name=".activity.CacheClearActivity"/>
+        <activity
+            android:name=".activity.AToolActivity"
+            android:label="高级工具"/>
+        <activity
+            android:name=".activity.QueryAddressActivity"
+            android:label="电话号码归属地查询"/>
+        <activity android:name=".activity.BlackListActivity"
+                  android:label="黑名单管理" />
+        <activity
+            android:name=".activity.AppManagerActivity"
+            android:label="应用管理"/>
+        <activity
+            android:name=".activity.CommonPhoneQueryActivity"
+            android:label="常用电话"/>
+        <activity
+            android:name=".activity.AppLockActivity"
+            android:label="应用锁"/>
+        <activity
+            android:name=".activity.CacheClearActivity"
+            android:label="缓存清理"/>
         <activity
             android:name=".activity.ValidationActivity"
             android:excludeFromRecents="true"
@@ -103,9 +123,13 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activity.ProcessManagerActivity">
+        <activity
+            android:name=".activity.ProcessManagerActivity"
+            android:label="进程管理">
         </activity>
-        <activity android:name=".activity.CacheClearActivity">
+        <activity android:name=".activity.BaseCacheClearActivity">
+        </activity>
+        <activity android:name=".activity.BaseActivity">
         </activity>
     </application>
 

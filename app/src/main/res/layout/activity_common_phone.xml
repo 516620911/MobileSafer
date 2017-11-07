@@ -3,9 +3,9 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical" >
-    <TextView
+  <!--  <TextView
         style="@style/TitleStyle"
-        android:text="常用号码查询"/>
+        android:text="常用号码查询"/>-->
     <!-- 可以扩展的ListView,和ListView类似 -->
     <ExpandableListView
         android:id="@+id/elv_common_number"

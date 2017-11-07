@@ -4,9 +4,9 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <TextView
+   <!-- <TextView
         style="@style/TitleStyle"
-        android:text="功能列表"/>
+        android:text="功能列表"/>-->
     <!-- android:ellipsize="start" 添加省略点的默认位置 -->
     <!--android:focusable="true"
            android:focusableInTouchMode="true"
@@ -42,5 +42,5 @@
         android:layout_height="match_parent"
         android:numColumns="3"
         android:verticalSpacing="10dp"
-        ></GridView>
+        />
 </LinearLayout>
