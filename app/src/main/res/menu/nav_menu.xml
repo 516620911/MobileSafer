@@ -5,10 +5,10 @@
             android:id="@+id/nav_home"
             android:icon="@android:drawable/ic_menu_revert"
             android:title="主页"/>-->
-        <item
+        <!--<item
             android:id="@+id/nav_PhoneBak"
             android:icon="@drawable/home_safe"
-            android:title="手机防盗"/>
+            android:title="手机防盗"/>-->
         <item
             android:id="@+id/nav_BlackList"
             android:icon="@drawable/home_callmsgsafe"

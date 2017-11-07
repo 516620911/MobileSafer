@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="24"/>
-
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -68,8 +68,9 @@
         <activity
             android:name=".activity.QueryAddressActivity"
             android:label="电话号码归属地查询"/>
-        <activity android:name=".activity.BlackListActivity"
-                  android:label="黑名单管理" />
+        <activity
+            android:name=".activity.BlackListActivity"
+            android:label="黑名单管理"/>
         <activity
             android:name=".activity.AppManagerActivity"
             android:label="应用管理"/>
@@ -131,6 +132,7 @@
         </activity>
         <activity android:name=".activity.BaseActivity">
         </activity>
+        <activity android:name=".activity.ContactListActivity"/>
     </application>
 
 </manifest>

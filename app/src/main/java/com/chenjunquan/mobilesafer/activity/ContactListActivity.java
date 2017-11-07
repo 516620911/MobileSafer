@@ -1,6 +1,5 @@
 package com.chenjunquan.mobilesafer.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,10 +19,11 @@ import java.util.List;
 
 
 /**
+ * 手机防盗功能查询联系人
  * Created by 516620911 on 2017.10.21.
  */
 
-public class ContactListActivity extends Activity {
+public class ContactListActivity extends BaseActivity {
     private ListView lv_contact;
     private Handler mHandler = new Handler() {
         @Override
@@ -41,7 +41,7 @@ public class ContactListActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contactlist);
+        initContentLayout(R.layout.activity_contactlist);
         initUI();
         initDate();
 
@@ -54,7 +54,6 @@ public class ContactListActivity extends Activity {
             public void run() {
                 mContacts = QueryContactsUtil.queryContacts(getApplicationContext());
                 Message message = Message.obtain();
-
                 mHandler.sendEmptyMessage(1);
             }
         }).start();

@@ -3,9 +3,9 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-<TextView
+<!--<TextView
     style="@style/TitleStyle"
-    android:text="choose contact"/>
+    android:text="choose contact"/>-->
     <ListView
         android:id="@+id/lv_contact"
         android:layout_width="wrap_content"

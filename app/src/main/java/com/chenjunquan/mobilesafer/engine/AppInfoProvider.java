@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * 获取应用信息
  * Created by Administrator on 2017/11/2.
  */
 

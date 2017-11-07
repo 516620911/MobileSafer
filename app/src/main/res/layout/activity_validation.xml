@@ -1,28 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
-<TextView
-    android:layout_width="wrap_content"
-    android:text="拦截应用名称"
-    android:layout_height="wrap_content"
-    android:id="@+id/tv_validation_name"/>
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+    android:padding="50dp">
+
     <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/ic_launcher"
-        android:id="@+id/iv_validation_icon"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:inputType="textPassword"
-        android:id="@+id/et_validation_psd"
-        android:hint="请输入密码"
-        android:layout_height="wrap_content"/>
-    <Button
+        android:layout_marginTop="50dp"
+        android:id="@+id/iv_validation_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/tv_validation_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="提交"
-        android:id="@+id/bt_validation_submit"/>
+        android:text="拦截应用名称"
+        android:textSize="19sp"
+        android:layout_marginBottom="50dp"/>
+
+    <EditText
+        android:id="@+id/et_validation_psd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="请输入密码"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/bt_validation_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提交"/>
 
 </LinearLayout>

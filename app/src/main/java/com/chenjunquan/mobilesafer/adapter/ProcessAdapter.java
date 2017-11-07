@@ -96,6 +96,7 @@ public class ProcessAdapter  extends BaseAdapter{
                 holder.tv_name = (TextView)convertView.findViewById(R.id.tv_name);
                 holder.tv_memory_info = (TextView) convertView.findViewById(R.id.tv_memory_info);
                 holder.cb_box = (CheckBox) convertView.findViewById(R.id.cb_box);
+                convertView.setTag(holder);
             }else{
                 holder = (ViewHolder) convertView.getTag();
             }
@@ -107,8 +108,8 @@ public class ProcessAdapter  extends BaseAdapter{
             }else{
                 holder.iv_icon.setBackgroundDrawable(processInfo.getIcon());
             }
-            //占用内存
-            String strSize = Formatter.formatFileSize(mContext, processInfo.memSize);
+            //占用内存(把Byte转成MB)
+            String strSize = Formatter.formatFileSize(mContext, processInfo.memeSize);
             holder.tv_memory_info.setText(strSize);
             //由于当前不能被选中 所以屏蔽当前线程的checkbox
             if(processInfo.packageName.equals(mContext.getPackageName())){

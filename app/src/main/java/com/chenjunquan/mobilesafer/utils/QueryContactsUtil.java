@@ -3,7 +3,6 @@ package com.chenjunquan.mobilesafer.utils;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.util.Log;
 
 import com.chenjunquan.mobilesafer.bean.Contact;
 
@@ -11,6 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 联系人查询工具类
+ * 通过ContentProvider查询联系人
+ * 根据表的结构,需要先从raw_contacts表查询联系人contact_id
+ * 再到另一张表data查询其它类型的数据
  * Created by 516620911 on 2017.10.21.
  */
 
@@ -40,7 +43,7 @@ public class QueryContactsUtil {
                     contact.setEmail(data1);
                 }
             }
-            Log.i("con",contact.toString());
+           // Log.i("con",contact.toString());
             contactLists.add(contact);
         }
 
